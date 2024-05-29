@@ -1,0 +1,6 @@
+metrics:
+  counters:
+    - name: numa_latency_total
+      help: numa latency total
+    - name: numa_move_total
+      help: numa move total
