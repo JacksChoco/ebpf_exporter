@@ -44,11 +44,6 @@ int BPF_PROG(fentry_migrate_misplaced_page)
 	return __migrate_misplaced();
 }
 
-SEC("fentry/migrate_misplaced_folio")
-int BPF_PROG(fentry_migrate_misplaced_folio)
-{
-	return __migrate_misplaced();
-}
 
 SEC("kprobe/migrate_misplaced_page")
 int BPF_PROG(kprobe_migrate_misplaced_page)
@@ -86,12 +81,6 @@ cleanup:
 
 SEC("fexit/migrate_misplaced_page")
 int BPF_PROG(fexit_migrate_misplaced_page_exit)
-{
-	return __migrate_misplaced_exit();
-}
-
-SEC("fexit/migrate_misplaced_folio")
-int BPF_PROG(fexit_migrate_misplaced_folio_exit)
 {
 	return __migrate_misplaced_exit();
 }
